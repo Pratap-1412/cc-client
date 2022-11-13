@@ -9,7 +9,7 @@ export default function Notification() {
     }, []);
 
     const deleteProduct = async (id) => {
-        let result = await fetch(`http://localhost:5000/notification-list/${id}`, {
+        let result = await fetch(`https://codingclubrrsimtservertrue.onrender.com/notification-list/${id}`, {
             method: "Delete"
         });
         result = await result.json();
@@ -19,7 +19,7 @@ export default function Notification() {
     }
 
     const getData = async () => {
-        let result = await fetch("http://localhost:5000/notification-list");
+        let result = await fetch("https://codingclubrrsimtservertrue.onrender.com/notification-list");
         result = await result.json();
         setNotification(result);
     };

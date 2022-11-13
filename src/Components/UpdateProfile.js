@@ -15,7 +15,7 @@ export default function UpdateProfile() {
     }, []);
     const getUserDetails = async () => {
         if (adminAuth) {
-            let result = await fetch(`http://localhost:5000/update-admin-profile/${params.id}`)
+            let result = await fetch(`https://codingclubrrsimtservertrue.onrender.com/update-admin-profile/${params.id}`)
             result = await result.json();
             setName(result.name);
             setEmail(result.email);
@@ -23,7 +23,7 @@ export default function UpdateProfile() {
             setPassword(result.password);
         }
         else {
-            let result = await fetch(`http://localhost:5000/update-user-profile/${params.id}`)
+            let result = await fetch(`https://codingclubrrsimtservertrue.onrender.com/update-user-profile/${params.id}`)
             result = await result.json();
             setName(result.name);
             setEmail(result.email);

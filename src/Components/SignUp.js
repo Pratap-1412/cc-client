@@ -23,7 +23,7 @@ export default function Signup() {
     if(admin && key === process.env.REACT_APP_KEY){
       if ((name && password && email && phone) !== "") {
         console.log(name, email, phone, password);
-        let result = await fetch("http://localhost:5000/admin-signup", {
+        let result = await fetch("https://codingclubrrsimtservertrue.onrender.com/admin-signup", {
           method: 'POST',
           body: JSON.stringify({ name, email, phone, password }),
           headers: {
@@ -45,7 +45,7 @@ export default function Signup() {
     else if(!admin){
       if ((name && password && email && phone) !== "") {
         console.log(name, email, phone, password);
-        let result = await fetch("http://localhost:5000/signup", {
+        let result = await fetch("https://codingclubrrsimtservertrue.onrender.com/signup", {
           method: 'POST',
           body: JSON.stringify({ name, email, phone, password }),
           headers: {

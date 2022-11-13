@@ -26,7 +26,7 @@ export default function Login() {
     })
     const handleClick = async () => {
         if (admin && key === process.env.REACT_APP_KEY) {
-            let result = await fetch("http://localhost:5000/admin-login", {
+            let result = await fetch("https://codingclubrrsimtservertrue.onrender.com/admin-login", {
                 method: 'POST',
                 body: JSON.stringify({ email, password }),
                 headers: {
@@ -45,7 +45,7 @@ export default function Login() {
         }
 
         else if (!admin) {
-            let result = await fetch("http://localhost:5000/login", {
+            let result = await fetch("https://codingclubrrsimtservertrue.onrender.com/login", {
                 method: 'POST',
                 body: JSON.stringify({ email, password }),
                 headers: {
