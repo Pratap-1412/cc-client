@@ -7,7 +7,6 @@ import NUpload from './Components/NUpload'
 import Profile from './Components/Profile';
 import NUpdate from './Components/NUpdate';
 import UpdateProfile from './Components/UpdateProfile';
-import Userlist from './Components/Userlist';
 
 
 function App() {
