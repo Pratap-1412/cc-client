@@ -22,7 +22,6 @@ function App() {
         <Route path='/profile' element={<Profile />} />
         <Route path='/notification/:id' element={<NUpdate />} />
         <Route path='/update-profile/:id' element={<UpdateProfile />} />
-        <Route path='/userslist' element={<Userlist/>}/>
       </Routes>
     </BrowserRouter>
   );
