@@ -4,11 +4,13 @@ import { Link } from 'react-router-dom';
 export default function Notification() {
     const adminAuth = localStorage.getItem('admins');
     const [notification, setNotification] = useState([]);
+    const [del, setDel] = useState(false);
     useEffect(() => {
         getData();
     }, []);
 
     const deleteProduct = async (id) => {
+        setDel(true);
         let result = await fetch(`https://codingclubrrsimtservertrue.onrender.com/notification-list/${id}`, {
             method: "Delete"
         });
@@ -47,14 +49,26 @@ export default function Notification() {
                                                     Edit
                                                 </button>
                                             </Link>
-                                            <button
-                                                type="button"
-                                                className="btn btn-link btn-rounded btn-sm fw-bold"
-                                                data-mdb-ripple-color="dark"
-                                                onClick={() => deleteProduct(item._id)}
-                                            >
-                                                Delete
-                                            </button>
+                                            {
+                                                del ?
+                                                    <button
+                                                        type="button"
+                                                        className="btn btn-link btn-rounded btn-sm fw-bold"
+                                                        data-mdb-ripple-color="dark"
+                                                        onClick={() => deleteProduct(item._id)}
+                                                        disabled
+                                                    >
+                                                        Deleting
+                                                    </button> :
+                                                    <button
+                                                        type="button"
+                                                        className="btn btn-link btn-rounded btn-sm fw-bold"
+                                                        data-mdb-ripple-color="dark"
+                                                        onClick={() => deleteProduct(item._id)}
+                                                    >
+                                                        Delete
+                                                    </button>
+                                            }
                                         </>
                                         : <></>
                                 }
