@@ -10,6 +10,7 @@ export default function Login() {
     const [key, setKey] = useState("");
     const navigate = useNavigate();
     let [admin, setAdmin] = useState(false);
+    const [disable, setdisable] = useState(false);
     const AsAdmin = () => {
         if (admin) {
             setAdmin(false);
@@ -25,6 +26,7 @@ export default function Login() {
         }
     })
     const handleClick = async () => {
+        setdisable(true);
         if (admin && key === process.env.REACT_APP_KEY) {
             let result = await fetch("https://codingclubrrsimtservertrue.onrender.com/admin-login", {
                 method: 'POST',
@@ -119,10 +121,15 @@ export default function Login() {
                                                             <></>
                                                     }
                                                 </div>
-
-                                                <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4 my-3">
-                                                    <button type="button" onClick={handleClick} className="btn btn-primary btn-lg">Sign In</button>
-                                                </div>
+                                                {
+                                                    disable ?
+                                                        <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4 my-3">
+                                                            <button type="button" onClick={handleClick} disabled className="btn btn-primary btn-lg">Signing In...</button>
+                                                        </div> :
+                                                        <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4 my-3">
+                                                            <button type="button" onClick={handleClick} className="btn btn-primary btn-lg">Sign In</button>
+                                                        </div>
+                                                }
                                                 <div>
                                                     <Link to='/signup'>Don't have an account? Sign Up</Link>
                                                 </div>

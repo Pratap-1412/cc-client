@@ -9,6 +9,7 @@ export default function Signup() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [key, setKey] = useState("");
+  const [disable, setdisable] = useState(false);
   const navigate = useNavigate();
   const AsAdmin = () => {
     if (admin) {
@@ -20,7 +21,8 @@ export default function Signup() {
   }
 
   const sendData = async () => {
-    if(admin && key === process.env.REACT_APP_KEY){
+    setdisable(true);
+    if (admin && key === process.env.REACT_APP_KEY) {
       if ((name && password && email && phone) !== "") {
         console.log(name, email, phone, password);
         let result = await fetch("https://codingclubrrsimtservertrue.onrender.com/admin-signup", {
@@ -42,7 +44,7 @@ export default function Signup() {
         alert("Please enter details !!!")
       }
     }
-    else if(!admin){
+    else if (!admin) {
       if ((name && password && email && phone) !== "") {
         console.log(name, email, phone, password);
         let result = await fetch("https://codingclubrrsimtservertrue.onrender.com/signup", {
@@ -64,7 +66,7 @@ export default function Signup() {
         alert("Please enter details !!!")
       }
     }
-    else{
+    else {
       alert('Key is incorrect!')
     }
   }
@@ -144,9 +146,15 @@ export default function Signup() {
                           }
                         </div>
 
-                        <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4 my-3">
-                          <button type="button" onClick={sendData} className="btn btn-primary btn-lg">Sign Up</button>
-                        </div>
+                        {
+                          disable ?
+                            <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4 my-3">
+                              <button type="button" onClick={sendData} className="btn btn-primary btn-lg" disabled>Signing Up...</button>
+                            </div> :
+                            <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4 my-3">
+                              <button type="button" onClick={sendData} className="btn btn-primary btn-lg">Sign Up</button>
+                            </div>
+                        }
                         <div>
                           <Link to='/login'>Already a member? Sign In</Link>
                         </div>
