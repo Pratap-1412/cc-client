@@ -44,9 +44,14 @@ export default function Header() {
 
                     <div className="d-flex align-items-center">
                         <div className="dropdown">
-                            <Link className="link-secondary me-3" to='/notification'>
-                                <i className="fas fa-bell"></i>
-                            </Link>
+                            {
+                                (adminAuth || userAuth) ?
+                                    <div className="dropdown">
+                                        <Link className="link-secondary me-3" to='/notification'>
+                                            <i className="fas fa-bell"></i>
+                                        </Link>
+                                    </div> : <></>
+                            }
                         </div>
                         <div className="dropdown">
                             <Link
