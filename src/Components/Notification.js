@@ -58,7 +58,7 @@ export default function Notification() {
                                                         onClick={() => deleteProduct(item._id)}
                                                         disabled
                                                     >
-                                                        Deleting
+                                                        Deleting...
                                                     </button> :
                                                     <button
                                                         type="button"
