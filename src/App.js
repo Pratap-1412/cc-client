@@ -7,6 +7,7 @@ import NUpload from './Components/NUpload'
 import Profile from './Components/Profile';
 import NUpdate from './Components/NUpdate';
 import UpdateProfile from './Components/UpdateProfile';
+import Userlist from './Components/Userlist';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path='/profile' element={<Profile />} />
         <Route path='/notification/:id' element={<NUpdate />} />
         <Route path='/update-profile/:id' element={<UpdateProfile />} />
+        <Route path='/userslist' element={<Userlist/>}/>
       </Routes>
     </BrowserRouter>
   );
