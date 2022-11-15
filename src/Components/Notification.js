@@ -49,26 +49,14 @@ export default function Notification() {
                                                     Edit
                                                 </button>
                                             </Link>
-                                            {
-                                                del ?
-                                                    <button
-                                                        type="button"
-                                                        className="btn btn-link btn-rounded btn-sm fw-bold"
-                                                        data-mdb-ripple-color="dark"
-                                                        onClick={() => deleteProduct(item._id)}
-                                                        disabled
-                                                    >
-                                                        Deleting...
-                                                    </button> :
-                                                    <button
-                                                        type="button"
-                                                        className="btn btn-link btn-rounded btn-sm fw-bold"
-                                                        data-mdb-ripple-color="dark"
-                                                        onClick={() => deleteProduct(item._id)}
-                                                    >
-                                                        Delete
-                                                    </button>
-                                            }
+                                            <button
+                                                type="button"
+                                                className="btn btn-link btn-rounded btn-sm fw-bold"
+                                                data-mdb-ripple-color="dark"
+                                                onClick={() => deleteProduct(item._id)}
+                                            >
+                                                Delete
+                                            </button>
                                         </>
                                         : <></>
                                 }
