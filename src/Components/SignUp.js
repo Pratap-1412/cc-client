@@ -21,8 +21,8 @@ export default function Signup() {
   }
 
   const sendData = async () => {
-    setdisable(true);
     if (admin && key === process.env.REACT_APP_KEY) {
+      setdisable(true);
       if ((name && password && email && phone) !== "") {
         console.log(name, email, phone, password);
         let result = await fetch("https://codingclubrrsimtservertrue.onrender.com/admin-signup", {

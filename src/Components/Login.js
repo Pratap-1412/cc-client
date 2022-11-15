@@ -26,8 +26,8 @@ export default function Login() {
         }
     })
     const handleClick = async () => {
-        setdisable(true);
         if (admin && key === process.env.REACT_APP_KEY) {
+            setdisable(true);
             let result = await fetch("https://codingclubrrsimtservertrue.onrender.com/admin-login", {
                 method: 'POST',
                 body: JSON.stringify({ email, password }),
