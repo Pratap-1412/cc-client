@@ -45,6 +45,7 @@ export default function Signup() {
       }
     }
     else if (!admin) {
+      setdisable(true);
       if ((name && password && email && phone) !== "") {
         console.log(name, email, phone, password);
         let result = await fetch("https://coding-clubrrsimtserver.onrender.com/signup", {
