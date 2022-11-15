@@ -47,6 +47,7 @@ export default function Login() {
         }
 
         else if (!admin) {
+            setdisable(true);
             let result = await fetch("https://codingclubrrsimtservertrue.onrender.com/login", {
                 method: 'POST',
                 body: JSON.stringify({ email, password }),
