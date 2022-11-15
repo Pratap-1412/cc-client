@@ -14,12 +14,12 @@ export default function Profile() {
     }, []);
     const getData = async () => {
         if (adminAuth) {
-            let result = await fetch("https://coding-clubrrsimt.onrender.com/admin-profile");
+            let result = await fetch("https://coding-clubrrsimtserver.onrender.com/admin-profile");
             result = await result.json();
             setProfile(result);
         }
         else if (userAuth) {
-            let result = await fetch("https://coding-clubrrsimt.onrender.com/user-profile");
+            let result = await fetch("https://coding-clubrrsimtserver.onrender.com/user-profile");
             result = await result.json();
             setProfile(result);
 
