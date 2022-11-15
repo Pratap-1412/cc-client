@@ -12,7 +12,7 @@ export default function NUpdate() {
         getUserDetails();
     }, []);
     const getUserDetails = async () => {
-        let result = await fetch(`https://codingclubrrsimtservertrue.onrender.com/notification-list/${params.id}`)
+        let result = await fetch(`https://coding-clubrrsimt.onrender.com/notification-list/${params.id}`)
         result = await result.json();
         setTitle(result.title);
         setDescription(result.description);
@@ -23,7 +23,7 @@ export default function NUpdate() {
     const updateData = async () => {
         if ((title && link && description) !== "") {
             console.log(title, description, link);
-            let result = await fetch(`https://codingclubrrsimtservertrue.onrender.com/notification-list/${params.id}`, {
+            let result = await fetch(`https://coding-clubrrsimt.onrender.com/notification-list/${params.id}`, {
                 method: 'Put',
                 body: JSON.stringify({ title, description, link }),
                 headers: {

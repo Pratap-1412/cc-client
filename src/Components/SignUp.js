@@ -25,7 +25,7 @@ export default function Signup() {
       setdisable(true);
       if ((name && password && email && phone) !== "") {
         console.log(name, email, phone, password);
-        let result = await fetch("https://codingclubrrsimtservertrue.onrender.com/admin-signup", {
+        let result = await fetch("https://coding-clubrrsimt.onrender.com/admin-signup", {
           method: 'POST',
           body: JSON.stringify({ name, email, phone, password }),
           headers: {
@@ -47,7 +47,7 @@ export default function Signup() {
     else if (!admin) {
       if ((name && password && email && phone) !== "") {
         console.log(name, email, phone, password);
-        let result = await fetch("https://codingclubrrsimtservertrue.onrender.com/signup", {
+        let result = await fetch("https://coding-clubrrsimt.onrender.com/signup", {
           method: 'POST',
           body: JSON.stringify({ name, email, phone, password }),
           headers: {

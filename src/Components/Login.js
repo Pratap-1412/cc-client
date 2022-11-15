@@ -28,7 +28,7 @@ export default function Login() {
     const handleClick = async () => {
         if (admin && key === process.env.REACT_APP_KEY) {
             setdisable(true);
-            let result = await fetch("https://codingclubrrsimtservertrue.onrender.com/admin-login", {
+            let result = await fetch("https://coding-clubrrsimt.onrender.com/admin-login", {
                 method: 'POST',
                 body: JSON.stringify({ email, password }),
                 headers: {
@@ -48,7 +48,7 @@ export default function Login() {
 
         else if (!admin) {
             setdisable(true);
-            let result = await fetch("https://codingclubrrsimtservertrue.onrender.com/login", {
+            let result = await fetch("https://coding-clubrrsimt.onrender.com/login", {
                 method: 'POST',
                 body: JSON.stringify({ email, password }),
                 headers: {

@@ -9,7 +9,7 @@ export default function NUpload() {
     const [link, setLink] = useState("");
     const sendData=async()=>{
         if ((title && description && link) !== "") {
-            let result = await fetch("https://codingclubrrsimtservertrue.onrender.com/create-task", {
+            let result = await fetch("https://coding-clubrrsimt.onrender.com/create-task", {
               method: 'POST',
               body: JSON.stringify({ title, description, link}),
               headers: {
