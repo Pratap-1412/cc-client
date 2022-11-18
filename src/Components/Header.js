@@ -39,7 +39,7 @@ export default function Header() {
                             {
                                 adminAuth ?
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/">Users List</Link>
+                                        <Link className="nav-link" to="/userslist">Users List</Link>
                                     </li> : <></>
                             }
                         </ul>
