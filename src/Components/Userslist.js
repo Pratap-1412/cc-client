@@ -63,7 +63,7 @@ export default function Userlist() {
                                             </div>
                                         </td>
                                         <td>
-                                            <p className="fw-normal mb-1">{adminAuth?<>Admin</>:<>Student</>}</p>
+                                            <p className="fw-normal mb-1">Student</p>
                                         </td>
                                         <td>{item.phone}</td>
                                         <td>
