@@ -5,6 +5,8 @@ import ProfileIcon from './img-rsrc/profile-icon.png';
 
 export default function Userlist() {
     const [user, setUser] = useState([]);
+    const adminAuth = localStorage.getItem('admins');
+    const userAuth = localStorage.getItem('users');
     useEffect(() => {
         getData();
     }, []);
@@ -35,7 +37,6 @@ export default function Userlist() {
                                 <th>S. No</th>
                                 <th>Name</th>
                                 <th>Title</th>
-                                <th>Status</th>
                                 <th>Phone</th>
                                 <th>Actions</th>
                             </tr>
@@ -62,23 +63,10 @@ export default function Userlist() {
                                             </div>
                                         </td>
                                         <td>
-                                            <p className="fw-normal mb-1">Designer</p>
-                                            <p className="text-muted mb-0">UI/UX</p>
-                                        </td>
-                                        <td>
-                                            <span className="badge badge-success rounded-pill d-inline">Active</span>
+                                            <p className="fw-normal mb-1">{adminAuth?<>Admin</>:<>Student</>}</p>
                                         </td>
                                         <td>{item.phone}</td>
                                         <td>
-                                            <Link to={`/userslist/${item._id}`}>
-                                                <button
-                                                    type="button"
-                                                    className="btn btn-link btn-rounded btn-sm fw-bold"
-                                                    data-mdb-ripple-color="dark"
-                                                >
-                                                    Edit
-                                                </button>
-                                            </Link>
                                             <button
                                                 type="button"
                                                 className="btn btn-link btn-rounded btn-sm fw-bold"
