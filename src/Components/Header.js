@@ -36,9 +36,12 @@ export default function Header() {
                             <li className="nav-item">
                                 <Link className="nav-link" to="/">Home</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/">Resources</Link>
-                            </li>
+                            {
+                                adminAuth ?
+                                    <li className="nav-item">
+                                        <Link className="nav-link" to="/">Users List</Link>
+                                    </li> : <></>
+                            }
                         </ul>
                     </div>
 
