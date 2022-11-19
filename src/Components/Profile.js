@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react'
 import Header from './Header'
 import { Link } from 'react-router-dom'
 import ProfileIcon from './img-rsrc/profile-icon.png'
+import Spinner from './Spinner';
 
 
 export default function Profile() {
     const [profile, setProfile] = useState([]);
+    const [loading, setLoading] = useState(false);
     const adminAuth = localStorage.getItem('admins');
     const userAuth = localStorage.getItem('users');
     const key = localStorage.getItem('key');
@@ -17,11 +19,17 @@ export default function Profile() {
             let result = await fetch("https://coding-clubrrsimtserver.onrender.com/admin-profile");
             result = await result.json();
             setProfile(result);
+            if (result) {
+                setLoading(true);
+            }
         }
         else if (userAuth) {
             let result = await fetch("https://coding-clubrrsimtserver.onrender.com/user-profile");
             result = await result.json();
             setProfile(result);
+            if (result) {
+                setLoading(true);
+            }
 
         }
     };
@@ -31,9 +39,11 @@ export default function Profile() {
             <section className="vh-100" style={{ "backgroundColor": "#f4f5f7" }}>
                 <div className="container py-5 h-100">
                     <div className="row d-flex justify-content-center align-items-center h-100">
-                        <div className="col col-lg-6 mb-4 mb-lg-0">
+                        {
+                            loading?
+                            <div className="col col-lg-6 mb-4 mb-lg-0">
                             <div className="card mb-3" style={{ "borderRadius": ".5rem" }}>
-                                {
+                                        {
                                     profile.map((item, index) =>
                                         (`"${item._id}"` === key) ?
                                             <div className="row g-0">
@@ -69,7 +79,9 @@ export default function Profile() {
                                     )
                                 }
                             </div>
-                        </div>
+                        </div>:
+                        <>{<Spinner/>}</>
+                        }
                     </div>
                 </div>
             </section>

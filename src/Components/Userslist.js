@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import Header from './Header';
 import ProfileIcon from './img-rsrc/profile-icon.png';
+import Spinner from './Spinner';
 
 export default function Userlist() {
     const [user, setUser] = useState([]);
-    const adminAuth = localStorage.getItem('admins');
-    const userAuth = localStorage.getItem('users');
+    const [loading, setLoading] = useState(false);
     useEffect(() => {
         getData();
     }, []);
@@ -14,6 +13,9 @@ export default function Userlist() {
         let result = await fetch("https://coding-clubrrsimtserver.onrender.com/userslist");
         result = await result.json();
         setUser(result);
+        if (result) {
+            setLoading(true);
+        }
 
     };
     const deleteProduct = async (id) => {
@@ -29,7 +31,9 @@ export default function Userlist() {
     return (
         <div>
             <Header />
-            <div className="my-5">
+            {
+                loading?
+                <div className="my-5">
                 <div className='container my-5'>
                     <table className="table align-middle mb-0 my-4 bg-white">
                         <thead className="bg-light">
@@ -82,7 +86,9 @@ export default function Userlist() {
                         }
                     </table>
                 </div>
-            </div>
+            </div>:
+            <div className='my-5'>{<Spinner/>}</div>
+            }
         </div>
     )
 }

@@ -41,7 +41,8 @@ export default function Signup() {
         alert('Signup completed successfully.')
       }
       else {
-        alert("Please enter details !!!")
+        alert("Please enter details !!!");
+        setdisable(false);
       }
     }
     else if (!admin) {

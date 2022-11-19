@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import CodingImg from './img-rsrc/about-coding.jpg'
+import CodingImg from './img-rsrc/card.png'
 
 export default function About() {
     return (

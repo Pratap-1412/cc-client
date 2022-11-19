@@ -43,6 +43,7 @@ export default function Login() {
             }
             else {
                 alert("Please enter valid details !!!");
+                setdisable(false);
             }
         }
 
