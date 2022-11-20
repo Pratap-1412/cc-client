@@ -42,8 +42,9 @@ export default function Login() {
                 navigate('/');
             }
             else {
-                alert("Please enter valid details !!!");
                 setdisable(false);
+                alert("Please enter valid details !!!");
+                
             }
         }
 
@@ -69,6 +70,7 @@ export default function Login() {
         }
         else {
             alert("Key is Incorrect");
+            setdisable(false);
         }
     }
     return (
