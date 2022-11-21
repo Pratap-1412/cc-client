@@ -23,6 +23,7 @@ function App() {
         <Route path='/userslist' element={<Userlist/>} />
         <Route path='/notification/:id' element={<NUpdate />} />
         <Route path='/update-profile/:id' element={<UpdateProfile />} />
+        <Route path='*' element={<h1>Page not found</h1>}/>
       </Routes>
     </BrowserRouter>
   );
