@@ -114,7 +114,7 @@ export default function UpdateProfile() {
                                                 <div className="d-flex flex-row align-items-center mb-4">
                                                     <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
                                                     <div className="form-outline flex-fill mb-0">
-                                                        <input type="password" id="form3Example4c" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} />
+                                                        <input type="password" id="form3Example4c" className="form-control" value= {password} onChange={(e) => setPassword(e.target.value)} />
                                                         <label className="form-label" >Password</label>
                                                     </div>
                                                 </div>
