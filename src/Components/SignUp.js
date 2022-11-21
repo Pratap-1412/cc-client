@@ -24,7 +24,6 @@ export default function Signup() {
     if (admin && key === process.env.REACT_APP_KEY) {
       setdisable(true);
       if ((name && password && email && phone) !== "") {
-        console.log(name, email, phone, password);
         let result = await fetch("https://coding-clubrrsimtserver.onrender.com/admin-signup", {
           method: 'POST',
           body: JSON.stringify({ name, email, phone, password }),
@@ -48,7 +47,6 @@ export default function Signup() {
     else if (!admin) {
       setdisable(true);
       if ((name && password && email && phone) !== "") {
-        console.log(name, email, phone, password);
         let result = await fetch("https://coding-clubrrsimtserver.onrender.com/signup", {
           method: 'POST',
           body: JSON.stringify({ name, email, phone, password }),

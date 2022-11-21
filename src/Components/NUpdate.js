@@ -22,7 +22,6 @@ export default function NUpdate() {
 
     const updateData = async () => {
         if ((title && link && description) !== "") {
-            console.log(title, description, link);
             let result = await fetch(`https://coding-clubrrsimtserver.onrender.com/notification-list/${params.id}`, {
                 method: 'Put',
                 body: JSON.stringify({ title, description, link }),
